@@ -39,3 +39,14 @@ of OpenSSH to provide a PuTTY-like app for Chrome users.
 the Plan 9 filesystem.  This directory also contains a simple bash-like shell
 environment for exploring these filesystems.  The code in this directory is a
 work-in-progress.
+
+# Mirrors & packaging
+
+You can find some mirrors of these projects in other places.
+
+* https://github.com/libapps: This the current mirror onto github.
+* https://www.npmjs.com/package/hterm: Packaging for npm installs.
+* `//depot/google3/third_party/javascript/hterm/`: Google packaging.
+
+* https://github.com/chromium/hterm: This is an old mirror.  Please don't use it
+  anymore :).
