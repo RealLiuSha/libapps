@@ -5,6 +5,57 @@ The official copy of this repository is located on chromium.googlesource.com.
 Use `git clone https://chromium.googlesource.com/apps/libapps` to create a
 local copy.
 
+# Coding Style
+
+We follow the [Chromium style guide] (which in turn follows the
+[Google style guide]).  You might find code in the tree that doesn't follow
+those, but it's most likely due to lack of tools automatically checking and
+enforcing rather than being done on purpose.
+
+[Chromium style guide]: https://chromium.googlesource.com/chromium/src/+/master/styleguide/web/web.md#JavaScript
+[Google style guide]: https://google.github.io/styleguide/jsguide.html
+
+* Do not one-line if statements.
+* When wrapping function arguments, wrap them all, or keep them aligned.
+
+## Automatic Formatting
+
+If you want to see suggestions for how to format your code, you can use the
+`clang-format` tool.  Note that clang-format can sometimes reformat code that
+is acceptable according to the style guide, and it cannot catch everything!
+Make sure to use your best judgment when going through its proposed changes.
+
+```
+# Write the formatted output to stdout.
+$ clang-format -style=file foo.js
+
+# Update the file in-place.
+$ clang-format -i -style=file foo.js
+```
+
+## Linting
+
+You can use [eslint](https://eslint.org/) to quickly check code.
+
+## Console Logging
+
+The `console.log` functions have a variety of function signatures.  We like to
+stick to a few forms though.
+
+* A single string when we expect everything to be strings:
+
+      console.log('The field "' + name + '" is invalid: ' + val);
+
+* A string followed by objects when dealing with more than strings, and we want
+  to be able to easily explore the object in the debugging console:
+
+      console.log('The field "' + name + '" is invalid:', val);
+
+* Or you can use ES6 template literals/strings:
+
+      console.log(`The field "${name}" is invalid: ${val}`);
+      console.log(`The field "${name}" is invalid:`, val);
+
 # Submitting patches
 
 This repository only accepts commits that are submitted through "Gerrit", the
