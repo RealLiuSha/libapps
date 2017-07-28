@@ -442,7 +442,7 @@ hterm.PreferenceManager.defaultPreferences = {
    'Set the encoding for data sent to host.'],
 
   'terminal-encoding':
-  [hterm.PreferenceManager.categories.Encoding, 'iso-2022',
+  [hterm.PreferenceManager.categories.Encoding, 'utf-8',
    ['iso-2022', 'utf-8', 'utf-8-locked'],
    'The default terminal encoding (DOCS).\n' +
    '\n' +
