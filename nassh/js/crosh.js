@@ -164,7 +164,7 @@ Crosh.prototype.onBeforeUnload_ = function(e) {
  *     original string.
  */
 Crosh.prototype.decodeUTF8IfNeeded_ = function(fromKeyboard, string) {
-  if (fromKeyboard &&
+  if (!fromKeyboard ||
       this.keyboard_ && this.keyboard_.characterEncoding == 'utf-8') {
     return lib.decodeUTF8(string);
   }
