@@ -72,7 +72,7 @@ window.onload = function() {
     // JS console.
     testRun.maxFailures = 1;
 
-    testRun.selectPattern(testRun.ALL_TESTS);
+    testRun.selectPattern(/wide-to-narrow-char/);
     testRun.run();
 
   }), console.log.bind(console));
